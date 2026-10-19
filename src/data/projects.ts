@@ -1,81 +1,146 @@
 export type Project = {
   id: string
   title: string
-  span: 'large' | 'wide' | 'tall' | 'small'
-  image?: string
-  video?: string
-  tags?: string[]
-  description?: string
+  kind: string
+  summary: string
+  description: string
+  highlights: string[]
+  tags: string[]
   liveUrl?: string
   githubUrl?: string
-  gallery?: string[]
 }
 
 export const projects: Project[] = [
   {
-    id: 'bigint-calculator',
-    title: 'Bigint Calculator',
-    span: 'small',
-    video: '/projects/bigint-calculator.mp4',
-    tags: ['C', 'Algorithms', 'CLI'],
+    id: 'historicke-mapy',
+    title: 'Detekce objektů v historických mapách',
+    kind: 'Bakalářská práce',
+    summary: 'Detekce a klasifikace objektů v historických mapách.',
     description:
-      'Konzolová aplikace pro práci s libovolně velkými celými čísly — různé číselné soustavy a vyhodnocování aritmetických výrazů v infixovém zápisu.',
-    githubUrl: 'https://github.com/jachymthegoat/Bigint-Calculator',
-    gallery: ['/projects/bigint-calculator-2.jpg'],
+      'Bakalářská práce. Model hledá a třídí objekty na historických mapách.',
+    highlights: ['Python a počítačové vidění', 'Detekce a klasifikace objektů'],
+    tags: ['Python', 'Počítačové vidění'],
   },
   {
-    id: 'infernal',
-    title: 'Infernal',
-    span: 'tall',
-    video: '/projects/infernal.mp4',
-    tags: ['Python', 'Pygame', 'Game Jam'],
+    id: 'umej-komin',
+    title: 'Umej komín',
+    kind: 'Provoz',
+    summary: 'Evidence zakázek, plán part a revizní protokoly.',
     description:
-      '2D hra vytvořená tříčlenným týmem za 3 dny na Ludum Dare. Průchod levely, boj s nepřáteli a progresivní obtížnost v pixel-art stylu.',
-    githubUrl: 'https://github.com/jachymthegoat/Infernal',
-    gallery: ['/projects/infernal-2.jpg'],
+      'Nástroj pro kominickou firmu. Vedoucí v něm plánuje práci, technik v terénu vidí dnešní zakázky, protokol o revizi se skládá do PDF a rok po kontrole odchází připomínka e-mailem.',
+    highlights: [
+      'Zákazníci, zakázky, fotky a archiv změn',
+      'Týdenní plán po partách a mapa výjezdů',
+      'PDF protokol a e-mail rok po kontrole',
+      'React, Node a PostgreSQL na Cloud Run',
+    ],
+    tags: ['React', 'Node', 'PostgreSQL'],
   },
   {
     id: 'army-tabor',
     title: 'Army Tábor',
-    span: 'small',
-    video: '/projects/army-tabor.mp4',
-    tags: ['React', 'TypeScript', 'Vite'],
+    kind: 'Web',
+    summary: 'Web letního tábora s přihláškou a administrací.',
     description:
-      'Web pro letní army tábor — program, přihlášky a informace pro rodiče. Aktuálně ve vývoji, plánované nasazení na army-tabor.cz.',
+      'Veřejná stránka s programem a aktualitami, online přihláška, která odejde e-mailem organizátorce, a administrace pro texty, články a přehled přihlášek.',
+    highlights: [
+      'Úvod, informace o táboře a kontakt',
+      'Přihláška s e-mailovou notifikací',
+      'Admin pro obsah a seznam přihlášek',
+    ],
+    tags: ['Next.js', 'SQLite', 'TypeScript'],
     liveUrl: 'https://army-tabor.cz',
-    gallery: ['/projects/army-tabor-2.jpg'],
   },
   {
     id: 'kominictvi-web',
     title: 'Kominictví Nácovský',
-    span: 'large',
-    image: '/projects/kominictvi-web.jpg',
-    tags: ['React', 'TypeScript', 'Vite'],
+    kind: 'Web',
+    summary: 'Prezentace rodinné firmy, ceník a poptávka.',
     description:
-      'Firemní web pro rodinnou kominickou firmu — prezentace služeb, galerie realizací a kontaktní formulář. Responzivní layout, nasazení na Vercel.',
+      'Jedna stránka, na které je vidět, co firma dělá, kolik to stojí a jak probíhá zakázka. Nezávazná poptávka je ve formuláři, nasazení běží na Vercelu.',
+    highlights: [
+      'Služby, ceník a postup práce',
+      'Poptávka bez přechodu na jiný web',
+      'Responzivní layout na Vercelu',
+    ],
+    tags: ['React', 'TypeScript', 'Vite'],
     liveUrl: 'https://kominictvi-web.vercel.app',
-    gallery: ['/projects/kominictvi-web-2.jpg'],
+    githubUrl: 'https://github.com/jachymthegoat/kominictvi-web',
+  },
+  {
+    id: 'blupikova-knihovna',
+    title: 'Blupíkova Knihovna',
+    kind: 'Aplikace',
+    summary: 'Pixel-art knihovna, kterou po náměstí vodí Blupík.',
+    description:
+      'Tři domy na náměstí — Chci přečíst, Právě čtu a Přečtené. Blupík dojde ke dveřím nebo po žebříku ke knize, než se otevře detail. Knihy zůstávají v prohlížeči, bez účtu a bez serveru.',
+    highlights: [
+      'Náměstí na celou obrazovku a interiér s poličkami',
+      'Hřbet knihy má barvu a ornament podle křídla',
+      'V křídle Právě čtu jsou nejvýš tři knihy',
+      'Canvas pixel engine a ukládání do localStorage',
+    ],
+    tags: ['React', 'TypeScript', 'Canvas'],
+    githubUrl: 'https://github.com/jachymthegoat/blupikova-knihovna',
   },
   {
     id: 'finance-tracker',
     title: 'Finance Tracker',
-    span: 'wide',
-    image: '/projects/finance-tracker.jpg',
-    tags: ['Electron', 'JavaScript', 'Desktop'],
+    kind: 'Desktop',
+    summary: 'Majetek, dluhy a čisté jmění na jedné ploše.',
     description:
-      'Minimalistická desktopová aplikace pro lokální sledování majetku, dluhů a čistého jmění v reálném čase. Data zůstávají na disku, bez cloudu.',
+      'Desktopová aplikace, která drží přehled jmění z dat na disku. Žádný účet, žádný cloud, čísla zůstávají v počítači.',
+    highlights: [
+      'Majetek, dluhy a čisté jmění',
+      'Data se neodesílají ven z počítače',
+      'Electron, bez registrace',
+    ],
+    tags: ['Electron', 'JavaScript'],
     githubUrl: 'https://github.com/jachymthegoat/Finance-Tracker',
-    gallery: ['/projects/finance-tracker-2.jpg'],
   },
   {
-    id: 'ufc-review-website',
-    title: 'UFC Review',
-    span: 'wide',
-    image: '/projects/ufc-review-website.jpg',
-    tags: ['PHP', 'MVC', 'MySQL'],
+    id: 'infernal',
+    title: 'Infernal',
+    kind: 'Hra',
+    summary: 'Pixel-art hra z Ludum Dare, za tři dny ve třech.',
     description:
-      'Recenzní portál UFC zápasů s vlastním MVC frameworkem v PHP — správa rolí, hodnocení zápasníků a AJAX hlasování bez reloadu stránky.',
+      'Průchod levely, boj s nepřáteli a obtížnost, která roste s postupem. Hru jsme složili tříčlenný tým během herního jamu v Pythonu a Pygame.',
+    highlights: [
+      'Ludum Dare, tři dny',
+      'Levely, boj a rostoucí obtížnost',
+      'Pixel-art a Pygame',
+    ],
+    tags: ['Python', 'Pygame'],
+    githubUrl: 'https://github.com/jachymthegoat/Infernal',
+  },
+  {
+    id: 'ufc-review',
+    title: 'UFC Review',
+    kind: 'Web',
+    summary: 'Recenze zápasů na vlastním PHP frameworku.',
+    description:
+      'Portál, kde se hodnotí zápasy a zápasníci. Role, recenze i hlasování jedou přes vlastní MVC. Hlas se zapíše AJAXem, stránka se nenačítá znovu.',
+    highlights: [
+      'Vlastní MVC v PHP a MySQL',
+      'Role a hodnocení zápasníků',
+      'Hlasování bez reloadu stránky',
+    ],
+    tags: ['PHP', 'MySQL', 'MVC'],
     githubUrl: 'https://github.com/jachymthegoat/UFC-Review-Website',
-    gallery: ['/projects/ufc-review-website-2.jpg'],
+  },
+  {
+    id: 'bigint-calculator',
+    title: 'Bigint Calculator',
+    kind: 'CLI',
+    summary: 'Kalkulačka pro celá čísla bez horní hranice.',
+    description:
+      'Konzolový program v C. Číslo může být libovolně dlouhé, dá se převést mezi soustavami a aritmetický výraz v infixovém zápisu se vyhodnotí přímo v terminálu.',
+    highlights: [
+      'Celá čísla bez stropu typu',
+      'Převody mezi číselnými soustavami',
+      'Vyhodnocení infixového výrazu',
+    ],
+    tags: ['C', 'Algoritmy'],
+    githubUrl: 'https://github.com/jachymthegoat/Bigint-Calculator',
   },
 ]
