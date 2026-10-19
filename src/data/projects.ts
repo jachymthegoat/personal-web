@@ -6,6 +6,7 @@ export type Project = {
   description: string
   highlights: string[]
   tags: string[]
+  image?: string
   liveUrl?: string
   githubUrl?: string
 }
@@ -13,6 +14,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: 'historicke-mapy',
+    image: '/project-images/detekce-img.png',
     title: 'Detekce objektů v historických mapách',
     kind: 'Bakalářská práce',
     summary: 'Detekce a klasifikace objektů v historických mapách.',
@@ -23,7 +25,8 @@ export const projects: Project[] = [
   },
   {
     id: 'umej-komin',
-    title: 'Umej komín',
+    title: 'Komíny',
+    image: '/project-images/komin-img.png',
     kind: 'Provoz',
     summary: 'Evidence zakázek, plán part a revizní protokoly.',
     description:
@@ -38,6 +41,7 @@ export const projects: Project[] = [
   },
   {
     id: 'army-tabor',
+    image: '/project-images/army-img.png',
     title: 'Army Tábor',
     kind: 'Web',
     summary: 'Web letního tábora s přihláškou a administrací.',
@@ -53,6 +57,7 @@ export const projects: Project[] = [
   },
   {
     id: 'kominictvi-web',
+    image: '/project-images/komin-img.png',
     title: 'Kominictví Nácovský',
     kind: 'Web',
     summary: 'Prezentace rodinné firmy, ceník a poptávka.',
@@ -69,6 +74,7 @@ export const projects: Project[] = [
   },
   {
     id: 'blupikova-knihovna',
+    image: '/project-images/blupik-img.png',
     title: 'Blupíkova Knihovna',
     kind: 'Aplikace',
     summary: 'Pixel-art knihovna, kterou po náměstí vodí Blupík.',
@@ -85,6 +91,7 @@ export const projects: Project[] = [
   },
   {
     id: 'finance-tracker',
+    image: '/project-images/finance-img.png',
     title: 'Finance Tracker',
     kind: 'Desktop',
     summary: 'Majetek, dluhy a čisté jmění na jedné ploše.',
@@ -100,6 +107,7 @@ export const projects: Project[] = [
   },
   {
     id: 'infernal',
+    image: '/project-images/infernal-img.png',
     title: 'Infernal',
     kind: 'Hra',
     summary: 'Pixel-art hra z Ludum Dare, za tři dny ve třech.',
@@ -115,6 +123,7 @@ export const projects: Project[] = [
   },
   {
     id: 'ufc-review',
+    image: '/project-images/ufc-img.png',
     title: 'UFC Review',
     kind: 'Web',
     summary: 'Recenze zápasů na vlastním PHP frameworku.',
@@ -130,6 +139,7 @@ export const projects: Project[] = [
   },
   {
     id: 'bigint-calculator',
+    image: '/project-images/bigint-img.png',
     title: 'Bigint Calculator',
     kind: 'CLI',
     summary: 'Kalkulačka pro celá čísla bez horní hranice.',

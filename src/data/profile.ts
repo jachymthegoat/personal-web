@@ -1,16 +1,15 @@
 export const profile = {
   name: 'Jáchym Nácovský',
-  role: 'Softwarový inženýr',
+  role: 'Software Engineer',
   location: 'Plzeň',
-  headline: 'Weby a interní nástroje v Reactu a TypeScriptu.',
-  about:
-    'Záleží mi na tom, jak se rozhraní používá. Ve volném čase jsem amatérský MMA zápasník.',
+  school: 'FAV ZČU',
+  skills: 'JavaScript, TypeScript, React, Python, C',
   email: 'jachym.nacovsky@icloud.com',
   linkedinUrl: 'https://www.linkedin.com/in/jachymnacovsky',
   githubUrl: 'https://github.com/jachymthegoat',
   education: [
     {
-      school: 'Západočeská univerzita v Plzni',
+      school: 'Fakulta aplikovaných věd ZČU',
       program: 'Fakulta aplikovaných věd',
       detail: 'Softwarové inženýrství, 3. ročník',
       when: '2023 — teď',
@@ -31,13 +30,13 @@ export const profile = {
         'Vývoj v JavaScriptu, TypeScriptu, Reactu a PostgreSQL. UI komponenty, databázové dotazy a code review.',
     },
     {
-      when: '09/2025 — teď',
+      when: '09/2025 — 09/2026',
       where: 'Korn Ferry',
       what: 'Data Analyst Registrar, částečný úvazek',
       detail: 'Částečný úvazek. Datové struktury, integrace, CRM a SAP.',
     },
     {
-      when: '05/2024 — 11/2025',
+      when: '09/2024 — 09/2025',
       where: 'Korn Ferry',
       what: 'Intern Data Analyst',
       detail: 'Klientská data, čištění v Excelu a reporting.',
