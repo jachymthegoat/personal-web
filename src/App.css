@@ -317,6 +317,53 @@ strong {
     gap: 2px;
   }
 
+  li:not(.job--span):not(.project) > span:first-child {
+    display: contents;
+  }
+
+  li:not(.job--span):not(.project) {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  li.job:not(.job--span) strong {
+    order: 1;
+  }
+
+  li:not(.job--span):not(.project) .meta {
+    order: 2;
+  }
+
+  li:not(.job--span):not(.project) > .when {
+    order: 3;
+  }
+
+  li.job:not(.job--span) .detail {
+    order: 4;
+  }
+
+  .job--span .job__row,
+  .job--span .job__lead,
+  .job--span .job__role .job__row {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .job--span .job__when-combined {
+    display: none;
+  }
+
+  .job--span .job__when-role,
+  .job--span .job__role .when {
+    max-width: none;
+    opacity: 1;
+  }
+
+  .job__suffix-wrap > span {
+    white-space: normal;
+  }
+
   .project__shot {
     width: 44px;
     height: 44px;
@@ -331,16 +378,6 @@ strong {
   .job .detail,
   .project .detail {
     grid-template-rows: 1fr;
-  }
-
-  .job--span .job__when-combined {
-    max-width: 0;
-    opacity: 0;
-  }
-
-  .job--span .job__when-role {
-    max-width: 11rem;
-    opacity: 1;
   }
 
   .job--span .job__suffix-wrap {
