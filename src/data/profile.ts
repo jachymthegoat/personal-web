@@ -30,22 +30,27 @@ export const profile = {
         'Vývoj v JavaScriptu, TypeScriptu, Reactu a PostgreSQL. UI komponenty, databázové dotazy a code review.',
     },
     {
-      when: '09/2025 — 09/2026',
+      when: '09/2024 — 10/2026',
       where: 'Korn Ferry',
-      what: 'Data Analyst Registrar, částečný úvazek',
-      detail: 'Částečný úvazek. Datové struktury, integrace, CRM a SAP.',
+      what: 'Data Analyst',
+      roles: [
+        {
+          when: '09/2025 — 09/2026',
+          titleSuffix: 'Registrar, částečný úvazek',
+          detail: 'Částečný úvazek. Datové struktury, integrace, CRM a SAP.',
+        },
+        {
+          when: '09/2024 — 09/2025',
+          what: 'Intern Data Analyst',
+          detail: 'Klientská data, čištění v Excelu a reporting.',
+        },
+      ],
     },
     {
-      when: '09/2024 — 09/2025',
-      where: 'Korn Ferry',
-      what: 'Intern Data Analyst',
-      detail: 'Klientská data, čištění v Excelu a reporting.',
-    },
-    {
-      when: '01/2020 — 03/2024',
+      when: '01/2020 — teď',
       where: 'Kominictví Nácovský',
-      what: 'Provozní administrativa',
-      detail: 'Harmonogram zakázek, klientská logistika a správa dokumentů.',
+      what: 'IT specialista',
+      detail: 'Vývoj interní aplikace, webových stránek, harmonogram zakázek, klientská logistika a správa dokumentů.',
     },
     {
       when: '03/2023',

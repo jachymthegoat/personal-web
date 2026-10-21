@@ -156,6 +156,108 @@ strong {
   grid-template-rows: 1fr;
 }
 
+.job--span {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.job--span .job__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.job--span .job__when-combined,
+.job--span .job__when-role {
+  overflow: hidden;
+  max-width: 11rem;
+  opacity: 1;
+  transition:
+    max-width 180ms ease-out,
+    opacity 160ms ease-out;
+}
+
+.job--span .job__when-role {
+  max-width: 0;
+  opacity: 0;
+}
+
+.job--span:hover .job__when-combined,
+.job--span:focus-within .job__when-combined {
+  max-width: 0;
+  opacity: 0;
+}
+
+.job--span:hover .job__when-role,
+.job--span:focus-within .job__when-role {
+  max-width: 11rem;
+  opacity: 1;
+}
+
+.job--span .job__row,
+.job--span .job__lead {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2px 20px;
+  align-items: baseline;
+}
+
+.job__suffix-wrap {
+  display: inline-grid;
+  grid-template-columns: 0fr;
+  margin-left: 0.28em;
+  vertical-align: bottom;
+  transition: grid-template-columns 180ms ease-out;
+}
+
+.job--span:hover .job__suffix-wrap,
+.job--span:focus-within .job__suffix-wrap {
+  grid-template-columns: 1fr;
+}
+
+.job__suffix-wrap > span {
+  overflow: hidden;
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.job--span .job__role {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.job--span .detail > span > .detail__text + .job__role {
+  margin-top: 14px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .job--span .job__when-combined,
+  .job--span .job__when-role,
+  .job__suffix-wrap {
+    transition: none;
+  }
+
+  .job--span:hover .job__when-combined,
+  .job--span:focus-within .job__when-combined {
+    max-width: 0;
+    opacity: 0;
+  }
+
+  .job--span:hover .job__when-role,
+  .job--span:focus-within .job__when-role {
+    max-width: 11rem;
+    opacity: 1;
+  }
+
+  .job--span:hover .job__suffix-wrap,
+  .job--span:focus-within .job__suffix-wrap {
+    grid-template-columns: 1fr;
+  }
+}
+
 .project {
   grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: start;
@@ -224,5 +326,24 @@ strong {
   .when,
   .links {
     white-space: normal;
+  }
+
+  .job .detail,
+  .project .detail {
+    grid-template-rows: 1fr;
+  }
+
+  .job--span .job__when-combined {
+    max-width: 0;
+    opacity: 0;
+  }
+
+  .job--span .job__when-role {
+    max-width: 11rem;
+    opacity: 1;
+  }
+
+  .job--span .job__suffix-wrap {
+    grid-template-columns: 1fr;
   }
 }

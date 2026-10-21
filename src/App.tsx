@@ -61,20 +61,56 @@ function App() {
       <section aria-labelledby="experience-title">
         <h2 id="experience-title">Praxe</h2>
         <ul>
-          {profile.experience.map((job) => (
-            <li className="job" key={`${job.where}-${job.when}`}>
-              <span>
-                <strong>{job.where}</strong>
-                <span className="meta">{job.what}</span>
-                <span className="detail">
-                  <span>
-                    <span className="detail__text">{job.detail}</span>
+          {profile.experience.map((job) =>
+            job.roles ? (
+              <li className="job job--span" key={`${job.where}-${job.when}`}>
+                <span className="job__body">
+                  <span className="job__row">
+                    <strong>{job.where}</strong>
+                    <span className="when job__when-combined">{job.when}</span>
+                  </span>
+                  <span className="job__lead">
+                    <span className="meta job__summary-line">
+                      {job.what}
+                      {job.roles[0].titleSuffix ? (
+                        <span className="job__suffix-wrap">
+                          <span>{job.roles[0].titleSuffix}</span>
+                        </span>
+                      ) : null}
+                    </span>
+                    <span className="when job__when-role">{job.roles[0].when}</span>
+                  </span>
+                  <span className="detail">
+                    <span>
+                      <span className="detail__text">{job.roles[0].detail}</span>
+                      {job.roles.slice(1).map((role) => (
+                        <span className="job__role" key={role.when}>
+                          <span className="job__row">
+                            <span className="meta">{role.what}</span>
+                            <span className="when">{role.when}</span>
+                          </span>
+                          <span className="detail__text">{role.detail}</span>
+                        </span>
+                      ))}
+                    </span>
                   </span>
                 </span>
-              </span>
-              <span className="when">{job.when}</span>
-            </li>
-          ))}
+              </li>
+            ) : (
+              <li className="job" key={`${job.where}-${job.when}`}>
+                <span>
+                  <strong>{job.where}</strong>
+                  <span className="meta">{job.what}</span>
+                  <span className="detail">
+                    <span>
+                      <span className="detail__text">{job.detail}</span>
+                    </span>
+                  </span>
+                </span>
+                <span className="when">{job.when}</span>
+              </li>
+            ),
+          )}
         </ul>
       </section>
 
